@@ -78,21 +78,6 @@ npm run coverage
 | `src/snippetStorage.ts` | Persistência de snippets |
 | `test/` | Testes Mocha/Chai |
 
-## Roadmap (curto prazo)
-
-- [ ] Ajustar heurísticas de frequência para ignorar ruído (arquivos gerados)
-- [ ] Adicionar suporte inicial a Python (tokens básicos)
-- [ ] Persistência de métricas do relatório (cache incremental)
-- [ ] Badge de CI (GitHub Actions) rodando testes
-- [ ] Publicação no Marketplace
-
-## Ideias Futuras
-
-- Aprendizado incremental multi-projeto
-- Exportação de padrões como snippets VS Code oficiais
-- Visual diff de padrões removidos vs adicionados
-- Ajuste de peso por tipo de nó AST
-
 ## Contribuição
 
 Pull Requests são bem-vindos! Recomendações:
