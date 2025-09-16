@@ -87,16 +87,9 @@ Pull Requests são bem-vindos! Recomendações:
 3. Siga estilo consistente (TypeScript estrito quando possível).
 4. Commits: convensão `tipo: descrição` (ex: `feat: adicionar suporte básico a python`).
 
-Sugestões de tipos:
-- feat, fix, refactor, test, docs, chore, perf
-
 ## Licença
 
 Distribuído sob a Licença MIT. Veja `LICENSE`.
-
-## Screenshot (placeholder)
-
-(Adicione aqui um GIF ou imagem demonstrando a sugestão inline.)
 
 ---
 Mantido enxuto intencionalmente. Para detalhes completos: `GUIA_USO.md`
