@@ -10,7 +10,7 @@ Extensão VS Code que aprende padrões do seu código (funções, classes, bloco
 
 > Objetivo: focar em um núcleo simples de aprendizado de padrões + sugestões contextuais sem dependência de LLM externo.
 
-## ✨ Principais Recursos
+## Principais Recursos
 
 - Aprendizado autônomo de padrões (funções, classes, loops, imports) em JS/TS
 - Sugestões preditivas via Inline Completion API (ghost text)
@@ -21,7 +21,7 @@ Extensão VS Code que aprende padrões do seu código (funções, classes, bloco
 
 > Recursos antigos como sincronização premium, sandbox isolado, busca semântica avançada e estatísticas detalhadas foram removidos para manter foco e simplicidade.
 
-## 🚀 Instalação
+## Instalação
 
 (Quando publicada no Marketplace, substitua este bloco.)
 
@@ -35,7 +35,7 @@ Ou (futuro Marketplace):
 ext install simpleai
 ```
 
-## ⚡ Uso Rápido
+## Uso Rápido
 
 1. Abra um arquivo JavaScript ou TypeScript.
 2. Digite normalmente – o motor aprende padrões durante a edição.
@@ -45,7 +45,7 @@ ext install simpleai
 
 Para detalhes (configurações, limites e exemplos), consulte `GUIA_USO.md`.
 
-## 🧪 Testes
+## Testes
 
 ```
 npm run test
@@ -55,7 +55,7 @@ Cobertura:
 npm run coverage
 ```
 
-## 🛠 Scripts Disponíveis
+## Scripts Disponíveis
 
 | Script | Ação |
 | ------ | ----- |
@@ -65,7 +65,7 @@ npm run coverage
 | `npm run coverage` | Relatório de cobertura |
 | `npm run package` | Empacota a extensão (vsce) |
 
-## 📂 Estrutura Essencial
+## Estrutura Essencial
 
 | Caminho | Descrição |
 |--------|-----------|
@@ -78,7 +78,7 @@ npm run coverage
 | `src/snippetStorage.ts` | Persistência de snippets |
 | `test/` | Testes Mocha/Chai |
 
-## 🧠 Roadmap (curto prazo)
+## Roadmap (curto prazo)
 
 - [ ] Ajustar heurísticas de frequência para ignorar ruído (arquivos gerados)
 - [ ] Adicionar suporte inicial a Python (tokens básicos)
@@ -86,14 +86,14 @@ npm run coverage
 - [ ] Badge de CI (GitHub Actions) rodando testes
 - [ ] Publicação no Marketplace
 
-## 🔍 Ideias Futuras
+## Ideias Futuras
 
 - Aprendizado incremental multi-projeto
 - Exportação de padrões como snippets VS Code oficiais
 - Visual diff de padrões removidos vs adicionados
 - Ajuste de peso por tipo de nó AST
 
-## 🤝 Contribuição
+## Contribuição
 
 Pull Requests são bem-vindos! Recomendações:
 
@@ -105,11 +105,11 @@ Pull Requests são bem-vindos! Recomendações:
 Sugestões de tipos:
 - feat, fix, refactor, test, docs, chore, perf
 
-## 🧾 Licença
+## Licença
 
 Distribuído sob a Licença MIT. Veja `LICENSE`.
 
-## 📸 Screenshot (placeholder)
+## Screenshot (placeholder)
 
 (Adicione aqui um GIF ou imagem demonstrando a sugestão inline.)
 
