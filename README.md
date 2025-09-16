@@ -102,3 +102,4 @@ MIT
 ---
 
 Mantido enxuto intencionalmente. Para detalhes completos: veja `GUIA_USO.md`.
+# SimpleAI
