@@ -1,0 +1,181 @@
+{
+  "name": "simpleai",
+  "displayName": "SimpleAI",
+  "description": "Smart snippet manager with AI-assisted suggestions and semantic search for VS Code.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:javascript",
+    "onLanguage:typescript"
+  ],
+  "contributes": {
+    "configuration": {
+      "title": "SimpleAI",
+      "properties": {
+        "simpleai.predictionColor": {
+          "type": "string",
+            "default": "#8888ff90",
+            "description": "Cor (RGBA/hex) usada para o ghost text de predição quando o tema não fornece contraste adequado. Ex: #99999990 ou rgba(120,120,120,0.6)"
+        },
+        "simpleai.showPredictionLabel": {
+          "type": "boolean",
+          "default": true,
+          "description": "Exibe um pequeno rótulo prefixado (ex: ·SimpleAI·) antes do texto de predição para diferenciar de outras ferramentas."
+        },
+        "simpleai.predictionLabelText": {
+          "type": "string",
+          "default": "·SimpleAI·",
+          "description": "Texto do rótulo mostrado antes da predição (apenas visual, não inserido no código)."
+        },
+        "simpleai.predictionLabelPosition": {
+          "type": "string",
+          "enum": ["prefix","suffix"],
+          "default": "prefix",
+          "description": "Posição do rótulo: prefix (antes) ou suffix (depois) da predição visual."
+        },
+        "simpleai.predictionBackgroundColor": {
+          "type": "string",
+          "default": "rgba(136,136,255,0.08)",
+          "description": "Cor de fundo semi-transparente para destacar a área da predição (use vazio para desativar)."
+        },
+        "simpleai.showPredictionMeta": {
+          "type": "boolean",
+          "default": false,
+          "description": "Mostra metadados (ex: confiança %) junto com o rótulo da predição."
+        },
+        "simpleai.enableTabKey": {
+          "type": "boolean",
+          "default": false,
+          "description": "Permite usar a tecla Tab para aceitar a predição SimpleAI. Desative se conflitar com outras extensões ou snippets."
+        },
+        "simpleai.previewMaxLength": {
+          "type": "number",
+          "default": 80,
+          "minimum": 20,
+          "maximum": 400,
+          "description": "Número máximo de caracteres exibidos no ghost text (apenas visual). O restante só é inserido quando aceito para evitar interferir em extensões de destaque de sintaxe." 
+        },
+        "simpleai.predictionRenderMode": {
+          "type": "string",
+          "enum": ["decoration","inline"],
+          "default": "inline",
+          "description": "Modo de renderização da predição: decoration (ghost text via decoration) ou inline (usa Inline Completion API do VS Code - recomendado para melhor compatibilidade)."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "simpleai.help",
+        "title": "SimpleAI: Ajuda / Guia Rápido"
+      },
+      {
+        "command": "simpleai.saveSnippet",
+        "title": "SimpleAI: Salvar Snippet"
+      },
+      {
+        "command": "simpleai.listSnippets",
+        "title": "SimpleAI: Listar Snippets"
+      },
+      {
+        "command": "simpleai.deleteSnippet",
+        "title": "SimpleAI: Deletar Snippet"
+      },
+      {
+        "command": "simpleai.acceptPrediction",
+        "title": "SimpleAI: Aceitar Predição"
+      },
+      {
+        "command": "simpleai.rejectPrediction",
+        "title": "SimpleAI: Rejeitar Predição"
+      },
+      {
+        "command": "simpleai.scanWorkspace",
+        "title": "SimpleAI: Escanear Workspace por Padrões"
+      },
+      {
+        "command": "simpleai.togglePredictionLabel",
+        "title": "SimpleAI: Alternar Rótulo de Predição"
+      },
+      {
+        "command": "simpleai.togglePredictionMeta",
+        "title": "SimpleAI: Alternar Metadados da Predição"
+      },
+      {
+        "command": "simpleai.toggleTabAcceptance",
+        "title": "SimpleAI: Alternar Aceitação via Tab"
+      },
+      {
+        "command": "simpleai.showLearningStats",
+        "title": "SimpleAI: Exibir Ranking de Padrões"
+      }
+      ,
+      {
+        "command": "simpleai.generateProjectReport",
+        "title": "SimpleAI: Gerar Relatório do Projeto"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorHasSelection",
+          "command": "simpleai.saveSnippet",
+          "group": "9_cutcopypaste"
+        }
+      ]
+    },
+    "keybindings": []
+  },
+  "main": "./out/src/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "test": "node ./out/test/runTest.js",
+    "test:unit": "cross-env TS_NODE_PROJECT=./tsconfig.test.json mocha",
+    "coverage": "nyc npm run test:unit",
+    "lint": "eslint src --ext ts",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.5",
+    "@types/crypto-js": "^4.1.1",
+    "@types/esprima": "^4.0.6",
+    "@types/estree": "^1.0.1",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.16.3",
+    "@types/sinon": "^10.0.15",
+    "@types/sinon-chai": "^3.2.9",
+    "@types/vscode": "^1.80.0",
+    "@vscode/test-electron": "^2.3.4",
+    "chai": "^4.3.7",
+    "cross-env": "^7.0.3",
+    "mocha": "^10.2.0",
+    "nyc": "^15.1.0",
+    "sinon": "^15.1.0",
+    "sinon-chai": "^3.7.0",
+    "source-map-support": "^0.5.21",
+    "ts-loader": "^9.4.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "@firebase/app": "^0.9.0",
+    "@firebase/firestore": "^3.12.0",
+    "@types/estree": "^1.0.0",
+    "axios": "^1.4.0",
+    "crypto-js": "^4.1.1",
+    "esprima": "^4.0.1",
+    "fs-extra": "^11.1.1",
+    "string-similarity": "^4.0.4"
+  }
+}

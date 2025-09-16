@@ -1,0 +1,65 @@
+# ---- Node / TypeScript ----
+node_modules/
+
+# Compilação / build
+out/
+dist/
+build/
+
+# Cache / ferramentas
+.nyc_output/
+coverage/
+.tmp/
+.temp/
+.cache/
+.eslintcache
+
+# Logs
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+pnpm-debug.log*
+
+# Sistema / OS
+.DS_Store
+Thumbs.db
+
+# VS Code / Editor
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.code-workspace
+.history/
+
+# Ambientes
+.env
+.env.local
+.env.*.local
+.env.*
+!.env.example
+
+# Pacotes
+*.tgz
+
+# Testes / Artefatos
+.vscode-test/
+.jest-cache/
+.jest/
+jest-html-reporters-*.html
+
+# Arquivos de pacote VSIX
+*.vsix
+
+# Backups
+*~
+
+# Firebase / credenciais locais (caso usadas futuramente)
+.firebase/
+
+# Lock opcional (se decidir não versionar)
+# package-lock.json
+
+# OneDrive artefatos temporários
+~$*
